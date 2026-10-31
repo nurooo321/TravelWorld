@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="aurora">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TerraNova — İnteraktif Küresel Şehir Seyahat Rehberi & Rota Planlayıcı</title>
+  <meta name="description" content="Yerel sırlar, 48 saatlik gezi planları, sentezlenmiş ses manzaraları ve seyahat bütçe simülatörüyle dünya şehirlerini Türkçe ve İngilizce çift dil desteğiyle keşfedin.">
+  
+  <!-- Modern Font pairings -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome for crisp travel icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Ambient Audio Equalizer Visualizer Layer -->
+  <div id="ambientCanvasBackdrop" class="ambient-canvas-backdrop" aria-hidden="true"></div>
+
+  <!-- SKIP LINK FOR ACCESSIBILITY -->
+  <a href="#mainContent" class="skip-link" data-i18n="skipLink">Ana içeriğe atla</a>
+
+  <!-- TOP APP NAVIGATION BAR -->
+  <header class="app-header" role="banner">
+    <div class="header-container">
+      
+      <!-- Brand Logo -->
+      <div class="brand-wrapper" id="brandHomeBtn" role="button" tabindex="0" aria-label="Travel-Guide">
+        <div class="brand-symbol">
+          <i class="fa-solid fa-earth-americas brand-icon"></i>
+          <span class="pulsing-orbit"></span>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">Travel<span class="highlight">WORLD</span></span>
+          <span class="brand-tagline" data-i18n="brandTagline">Seyehat Rehberimiz</span>
+        </div>
+      </div>
+
+      <!-- Quick Search Bar (Global) -->
+      <div class="global-search-container" role="search">
+        <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
+        <input 
+          type="search" 
+          id="globalSearchInput" 
+          class="global-search-input" 
+          placeholder="Şehir, gezi noktası, atmosfer, ülke ara... (Odaklanmak için '/' tuşuna basın)" 
+          data-i18n-placeholder="searchPlaceholder"
+          aria-label="Search destinations"
+          autocomplete="off"
+        >
+        <span class="search-shortcut" title="Press forward slash to focus">/</span>
+        
+        <!-- Live Instant Suggestions Dropdown -->
+        <div id="searchSuggestionsDrop" class="search-suggestions-drop hidden" role="listbox" aria-label="Search Suggestions"></div>
+      </div>
+
+      <!-- Nav Tools & Interactive Triggers -->
+      <div class="header-tools">
+        
+        <!-- Language Switcher (TR / EN) -->
+        <div class="lang-segmented-pill" role="group" aria-label="Dil Seçici / Language Switcher">
+          <button id="langBtnTR" class="lang-pill-btn active" data-lang="tr" aria-label="Türkçe" aria-pressed="true">
+            <span class="flag-icon">🇹🇷</span> TR
+          </button>
+          <button id="langBtnEN" class="lang-pill-btn" data-lang="en" aria-label="English" aria-pressed="false">
+            <span class="flag-icon">🇬🇧</span> EN
+          </button>
+        </div>
+
+        <!-- Ambient Soundscape Controller -->
+        <div class="soundscape-control-wrapper">
+          <button id="soundscapeToggleBtn" class="tool-btn sound-toggle" aria-label="Toggle Ambient Soundscape" title="Toggle Atmospheric Soundscape">
+            <span class="equalizer-bars" aria-hidden="true">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </span>
+            <span class="btn-label"><i class="fa-solid fa-headphones"></i> <span data-i18n="soundscapeBtn">Ses</span></span>
+          </button>
+          
+          <!-- Soundscape Popover Menu -->
+          <div id="soundscapeMenu" class="soundscape-menu hidden" role="region" aria-label="Soundscape selector">
+            <div class="soundscape-menu-header">
+              <span><i class="fa-solid fa-volume-high"></i> <span data-i18n="ambientSynthesizer">Atmosferik Sentezleyici</span></span>
+              <span id="soundActiveName" class="sound-active-badge">Off</span>
+            </div>
+            <div class="soundscape-options">
+              <button class="sound-btn" data-sound="cyberpunk_rain">
+                <i class="fa-solid fa-cloud-showers-heavy"></i>
+                <div>
+                  <div class="sound-name" data-i18n="tokyoNeonRain">Tokyo Neon Yağmuru</div>
+                  <div class="sound-desc" data-i18n="tokyoNeonRainSub">Yağmur damlaları ve derinden gelen şehir uğultusu</div>
+                </div>
+              </button>
+              <button class="sound-btn" data-sound="zen_bamboo">
+                <i class="fa-solid fa-wind"></i>
+                <div>
+                  <div class="sound-name" data-i18n="kyotoZenGarden">Kyoto Zen Bahçesi</div>
+                  <div class="sound-desc" data-i18n="kyotoZenGardenSub">Bambu esintisi ve meditasyon çanları</div>
+                </div>
+              </button>
+              <button class="sound-btn" data-sound="mediterranean_breeze">
+                <i class="fa-solid fa-water"></i>
+                <div>
+                  <div class="sound-name" data-i18n="mediterraneanWaves">Akdeniz Dalgaları</div>
+                  <div class="sound-desc" data-i18n="mediterraneanWavesSub">Kıyıya vuran huzurlu dalga sesleri</div>
+                </div>
+              </button>
+              <button class="sound-btn" data-sound="arctic_wind">
+                <i class="fa-regular fa-snowflake"></i>
+                <div>
+                  <div class="sound-name" data-i18n="arcticAuroraWhisper">Kutup Işıkları Fısıltısı</div>
+                  <div class="sound-desc" data-i18n="arcticAuroraWhisperSub">Buzul rüzgarları ve dingin kutup gecesi</div>
+                </div>
+              </button>
+            </div>
+            <div class="volume-slider-box">
+              <i class="fa-solid fa-volume-low"></i>
+              <input type="range" id="soundVolumeSlider" min="0" max="1" step="0.05" value="0.5" aria-label="Soundscape Volume">
+              <i class="fa-solid fa-volume-high"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destiny Roulette (Surprise Me) -->
+        <button id="surpriseMeBtn" class="tool-btn highlight-pulse" aria-label="Surprise Me City Spinner" title="Surprise Me! Destiny Trip Roulette">
+          <i class="fa-solid fa-dice-d20"></i>
+          <span class="btn-label" data-i18n="surpriseMeBtn">Kader Çarkı</span>
+        </button>
+
+        <!-- Budget Estimator Trigger -->
+        <button id="budgetCalcBtn" class="tool-btn" aria-label="Travel Budget Calculator" title="Interactive Travel Budget Calculator">
+          <i class="fa-solid fa-calculator"></i>
+          <span class="btn-label" data-i18n="budgetBtn">Bütçe</span>
+        </button>
+
+        <!-- Bucket List / Vault Trigger -->
+        <button id="vaultDrawerBtn" class="tool-btn badge-btn" aria-label="My Travel Vault" title="My Saved Bucket List & Itinerary">
+          <i class="fa-solid fa-bookmark"></i>
+          <span class="btn-label" data-i18n="vaultBtn">Kasam</span>
+          <span id="vaultCountBadge" class="nav-badge" aria-label="0 saved items">0</span>
+        </button>
+
+        <!-- Theme Selector Dropdown -->
+        <div class="theme-picker-wrapper">
+          <button id="themeToggleBtn" class="tool-btn icon-only" aria-label="Switch Design Theme" title="Switch Design Theme">
+            <i class="fa-solid fa-palette"></i>
+          </button>
+          <div id="themeMenu" class="theme-menu hidden" role="menu" aria-label="Theme Options">
+            <button class="theme-opt-btn active" data-theme="aurora" role="menuitem">
+              <span class="theme-swatch aurora-swatch"></span> Aurora Deep (Dark)
+            </button>
+            <button class="theme-opt-btn" data-theme="midnight" role="menuitem">
+              <span class="theme-swatch midnight-swatch"></span> Obsidian Cyber (OLED)
+            </button>
+            <button class="theme-opt-btn" data-theme="terracotta" role="menuitem">
+              <span class="theme-swatch terracotta-swatch"></span> Sunset Terracotta (Warm)
+            </button>
+            <button class="theme-opt-btn" data-theme="solarlight" role="menuitem">
+              <span class="theme-swatch solarlight-swatch"></span> Solar Quartz (Light)
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN APPLICATION CONTAINER -->
+  <main id="mainContent" class="main-layout" role="main">
+    
+    <!-- HERO IMMERSIVE SECTION -->
+    <section class="hero-section" id="heroSection" aria-labelledby="heroTitle">
+      <div class="hero-backdrop" id="heroBackdrop">
+        <div class="hero-overlay-gradient"></div>
+        <div class="hero-particles" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span data-i18n="heroBadge">Küresel Keşif & Seyahat Rehberi </span>
+        </div>
+        <h1 id="heroTitle" class="hero-headline">
+          <span id="heroTitlePrefix" data-i18n="heroTitlePrefix">Dünya Şehirlerinin Ruhunu</span> 
+          <span class="gradient-text" id="heroDynamicWord">Keşfetmeye Hazır Mısınız?</span>
+        </h1>
+        <p class="hero-subtext" data-i18n="heroSubtext">
+          Klasik turist rotalarının ötesine geçin. 5 kıtada yerel halkın sırlarını, 48 saatlik özenle hazırlanmış gezi planlarını, sentezlenmiş ses manzaralarını ve hesaplanmış seyahat bütçelerini keşfedin.
+        </p>
+
+        <!-- Quick Hero Vibe Tags -->
+        <div class="hero-vibe-shortcuts" aria-label="Popular Vibe Filters">
+          <span class="vibe-prompt"><i class="fa-solid fa-compass"></i> <span data-i18n="pickTravelMood">Bir seyahat modu seçin:</span></span>
+          <button class="vibe-pill-btn" data-vibe="Foodie Heaven"><i class="fa-solid fa-utensils"></i> <span data-i18n="vibeFoodie">Gastronomi</span></button>
+          <button class="vibe-pill-btn" data-vibe="Zen & Nature"><i class="fa-solid fa-spa"></i> <span data-i18n="vibeZen">Huzur & Doğa</span></button>
+          <button class="vibe-pill-btn" data-vibe="Cyberpunk"><i class="fa-solid fa-bolt"></i> <span data-i18n="vibeCyber">Siberpunk</span></button>
+          <button class="vibe-pill-btn" data-vibe="Historic"><i class="fa-solid fa-landmark-dome"></i> <span data-i18n="vibeHistoric">Tarih</span></button>
+          <button class="vibe-pill-btn" data-vibe="Romantic"><i class="fa-solid fa-heart"></i> <span data-i18n="vibeRomantic">Romantik</span></button>
+          <button class="vibe-pill-btn" data-vibe="Adventure"><i class="fa-solid fa-mountain"></i> <span data-i18n="vibeAdventure">Macera</span></button>
+        </div>
+
+        <!-- Metric Highlights -->
+        <div class="hero-metrics-bar">
+          <div class="metric-item">
+            <span class="metric-val" id="metricTotalCities">10</span>
+            <span class="metric-label" data-i18n="iconicCities">İkonik Şehir</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <span class="metric-val" id="metricTotalAttractions">25+</span>
+            <span class="metric-label" data-i18n="curatedSpots">Özel Gezi Noktası</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <span class="metric-val">100%</span>
+            <span class="metric-label" data-i18n="insiderTipsMetric">Yerel İpucu</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <span class="metric-val">TR / EN</span>
+            <span class="metric-label" data-i18n="bilingualSupportMetric">Çift Dil Desteği</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPLORATION TOOLBAR (REGION TABS, FILTERS & SORT) -->
+    <section class="explorer-toolbar-section" aria-label="Destination Filter and Controls">
+      <div class="toolbar-wrapper">
+        
+        <!-- Region Filter Pills -->
+        <div class="region-tabs-container" role="tablist" aria-label="Filter by Continent">
+          <button class="region-tab active" data-region="All" role="tab" aria-selected="true">
+            <i class="fa-solid fa-globe"></i> <span data-i18n="allContinents">Tüm Kıtalar</span>
+          </button>
+          <button class="region-tab" data-region="Europe" role="tab" aria-selected="false">
+            <i class="fa-solid fa-landmark"></i> <span data-i18n="europe">Avrupa</span>
+          </button>
+          <button class="region-tab" data-region="Asia" role="tab" aria-selected="false">
+            <i class="fa-solid fa-torii-gate"></i> <span data-i18n="asia">Asya</span>
+          </button>
+          <button class="region-tab" data-region="Americas" role="tab" aria-selected="false">
+            <i class="fa-solid fa-mountain-sun"></i> <span data-i18n="americas">Amerika</span>
+          </button>
+          <button class="region-tab" data-region="Africa" role="tab" aria-selected="false">
+            <i class="fa-solid fa-sun"></i> <span data-i18n="africa">Afrika</span>
+          </button>
+          <button class="region-tab" data-region="Oceania" role="tab" aria-selected="false">
+            <i class="fa-solid fa-water"></i> <span data-i18n="oceania">Okyanusya</span>
+          </button>
+        </div>
+
+        <!-- Filter & Sorting Dropdowns -->
+        <div class="filter-controls-group">
+          
+          <!-- Vibe Filter Selector -->
+          <div class="control-box">
+            <label for="vibeFilterSelect" class="control-label"><i class="fa-solid fa-masks-theater"></i> <span data-i18n="vibeLabel">Atmosfer:</span></label>
+            <select id="vibeFilterSelect" class="app-select" aria-label="Filter by Vibe">
+              <option value="All" data-i18n="allVibes">Tüm Atmosferler</option>
+              <option value="Historic" data-i18n="vibeHistoric">Tarihi</option>
+              <option value="Zen & Nature" data-i18n="vibeZen">Huzur & Doğa</option>
+              <option value="Foodie Heaven" data-i18n="vibeFoodie">Gastronomi Cenneti</option>
+              <option value="Cyberpunk" data-i18n="vibeCyber">Siberpunk</option>
+              <option value="Romantic" data-i18n="vibeRomantic">Romantik</option>
+              <option value="Adventure" data-i18n="vibeAdventure">Macera</option>
+              <option value="Art & Design" data-i18n="vibeArt">Sanat & Tasarım</option>
+              <option value="Nightlife" data-i18n="vibeNightlife">Gece Hayatı</option>
+            </select>
+          </div>
+
+          <!-- Budget Level Selector -->
+          <div class="control-box">
+            <label for="costFilterSelect" class="control-label"><i class="fa-solid fa-coins"></i> <span data-i18n="budgetLabel">Bütçe:</span></label>
+            <select id="costFilterSelect" class="app-select" aria-label="Filter by Budget Tier">
+              <option value="All" data-i18n="anyBudget">Tüm Seviyeler</option>
+              <option value="$" data-i18n="budgetFriendly">$ Ekonomik Gezgin</option>
+              <option value="$$" data-i18n="moderate">$$ Dengeli Bütçe</option>
+              <option value="$$$" data-i18n="luxuryTier">$$$ Lüks / Premium</option>
+            </select>
+          </div>
+
+          <!-- Sort Order Selector -->
+          <div class="control-box">
+            <label for="sortOrderSelect" class="control-label"><i class="fa-solid fa-arrow-down-short-wide"></i> <span data-i18n="sortLabel">Sırala:</span></label>
+            <select id="sortOrderSelect" class="app-select" aria-label="Sort Destinations">
+              <option value="featured" data-i18n="sortFeatured">Öne Çıkan Rotalar</option>
+              <option value="rating" data-i18n="sortRating">En Yüksek Puanlılar</option>
+              <option value="name" data-i18n="sortName">Şehir Adı (A-Z)</option>
+              <option value="costLow" data-i18n="sortCostLow">Bütçe (Düşükten Yükseğe)</option>
+              <option value="costHigh" data-i18n="sortCostHigh">Bütçe (Yüksekten Düşüğe)</option>
+            </select>
+          </div>
+
+          <!-- View Mode Toggle -->
+          <div class="view-mode-toggle" role="group" aria-label="View Mode">
+            <button id="viewGridBtn" class="mode-btn active" title="Grid View" aria-pressed="true">
+              <i class="fa-solid fa-table-cells-large"></i>
+            </button>
+            <button id="viewCompactBtn" class="mode-btn" title="Compact Magazine View" aria-pressed="false">
+              <i class="fa-solid fa-list"></i>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Active Filter Tags Status Bar -->
+      <div id="activeFiltersSummary" class="active-filters-bar hidden" aria-live="polite">
+        <span class="active-label" data-i18n="activeFilters">Aktif Filtreler:</span>
+        <div id="filterTagsList" class="filter-tags-list"></div>
+        <button id="resetFiltersBtn" class="clear-filters-btn" title="Clear all active filters">
+          <i class="fa-solid fa-rotate-left"></i> <span data-i18n="resetAll">Tümünü Sıfırla</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- DESTINATIONS SHOWCASE GRID -->
+    <section class="destinations-showcase-section" aria-label="Destinations Explorer">
+      <div class="section-header-row">
+        <div>
+          <h2 class="section-title" data-i18n="sectionTitle">Küresel Keşif Portfolyoları</h2>
+          <p class="section-subtitle" id="destinationsCountSubtitle">Kayıtlı tüm rotalar gösteriliyor</p>
+        </div>
+      </div>
+
+      <!-- Cards Grid -->
+      <div id="destinationsGrid" class="destinations-grid" role="region" aria-live="polite">
+        <!-- Dynamically injected via JavaScript -->
+        <div class="loading-state-card">
+          <div class="loading-spinner"></div>
+          <p>Yerküre koordinatları yükleniyor...</p>
+        </div>
+      </div>
+
+      <!-- Empty Results Fallback -->
+      <div id="emptyResultsState" class="empty-state hidden" role="alert">
+        <div class="empty-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+        <h3 data-i18n="noDestinationsFound">Sonuç bulunamadı</h3>
+        <p data-i18n="noDestinationsSub">Seçtiğiniz kıta, atmosfer veya bütçe kriterlerine uygun şehir bulunamadı.</p>
+        <button id="emptyResetBtn" class="btn-primary" data-i18n="clearFiltersShowAll">Filtreleri Temizle ve Hepsini Göster</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================== -->
+  <!-- MODAL: CITY DEEP DIVE / STORYTELLING VIEW      -->
+  <!-- ============================================== -->
+  <div id="cityDetailModal" class="app-modal city-modal hidden" role="dialog" aria-modal="true" aria-labelledby="cityModalTitle">
+    <div class="modal-backdrop" id="cityModalBackdrop"></div>
+    <div class="modal-container city-modal-container">
+      
+      <!-- Modal Top Close & Share Bar -->
+      <div class="modal-header-actions">
+        <button id="cityModalShareBtn" class="action-circle-btn" aria-label="Copy Link" title="Copy Destination Link">
+          <i class="fa-solid fa-arrow-up-from-bracket"></i>
+        </button>
+        <button id="cityModalVaultToggleBtn" class="action-circle-btn" aria-label="Bookmark this City" title="Save City to Vault">
+          <i class="fa-regular fa-bookmark"></i>
+        </button>
+        <button id="cityModalCloseBtn" class="action-circle-btn close-btn" aria-label="Close dialog">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Scrollable City Content -->
+      <div class="city-modal-scroll" id="cityModalContent">
+        <!-- Rendered dynamically via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- MODAL: ATTRACTION INSIDER DOSSIER             -->
+  <!-- ============================================== -->
+  <div id="attractionModal" class="app-modal hidden" role="dialog" aria-modal="true" aria-labelledby="attractionModalTitle">
+    <div class="modal-backdrop" id="attractionModalBackdrop"></div>
+    <div class="modal-container attraction-modal-container">
+      <div class="modal-header-actions">
+        <button id="attractionModalVaultBtn" class="action-circle-btn" aria-label="Bookmark Attraction">
+          <i class="fa-regular fa-bookmark"></i>
+        </button>
+        <button id="attractionModalCloseBtn" class="action-circle-btn close-btn" aria-label="Close attraction view">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="attraction-modal-body" id="attractionModalBody">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- MODAL: DESTINY ROULETTE ("SURPRISE ME")        -->
+  <!-- ============================================== -->
+  <div id="rouletteModal" class="app-modal hidden" role="dialog" aria-modal="true" aria-labelledby="rouletteTitle">
+    <div class="modal-backdrop" id="rouletteModalBackdrop"></div>
+    <div class="modal-container roulette-modal-container">
+      <div class="modal-header-actions">
+        <button id="rouletteModalCloseBtn" class="action-circle-btn close-btn" aria-label="Close roulette">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      
+      <div class="roulette-body text-center">
+        <div class="roulette-badge"><i class="fa-solid fa-dice-d20"></i> <span data-i18n="destinyWheel">Kader Çarkı</span></div>
+        <h2 id="rouletteTitle" class="roulette-headline" data-i18n="rouletteHeadline">Rüzgar Sizi Nereye Götürecek?</h2>
+        <p class="roulette-sub" data-i18n="rouletteSub">Bir sonraki unutulmaz seyahatinizi belirlemek için gezgin kader çarkını çevirin.</p>
+        
+        <!-- Animated Slot / Spinner Display Box -->
+        <div class="roulette-display-card" id="rouletteCard">
+          <div class="roulette-image-wrapper">
+            <img id="rouletteImg" src="" alt="Mystery Destination" class="roulette-img">
+            <div class="roulette-flag-badge" id="rouletteFlag">🌍</div>
+          </div>
+          <div class="roulette-info">
+            <h3 id="rouletteCityName" class="roulette-city" data-i18n="readyToRoll">Hazır mısınız?</h3>
+            <p id="rouletteCountry" class="roulette-country" data-i18n="clickSpinStart">Çarkı başlatmak için Çevir butonuna tıklayın</p>
+            <div id="rouletteVibes" class="roulette-vibes"></div>
+          </div>
+        </div>
+
+        <!-- Spin Trigger -->
+        <div class="roulette-controls">
+          <button id="spinRouletteBtn" class="btn-primary pulse-btn">
+            <i class="fa-solid fa-arrows-rotate"></i> <span data-i18n="spinDestinyWheel">Kader Çarkını Çevir</span>
+          </button>
+          <button id="exploreRouletteBtn" class="btn-secondary hidden">
+            <i class="fa-solid fa-compass"></i> <span data-i18n="exploreChosenCity">Seçilen Şehri Keşfet</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- MODAL: TRAVEL BUDGET ESTIMATOR                 -->
+  <!-- ============================================== -->
+  <div id="budgetModal" class="app-modal hidden" role="dialog" aria-modal="true" aria-labelledby="budgetTitle">
+    <div class="modal-backdrop" id="budgetModalBackdrop"></div>
+    <div class="modal-container budget-modal-container">
+      <div class="modal-header-actions">
+        <button id="budgetModalCloseBtn" class="action-circle-btn close-btn" aria-label="Close budget calculator">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="budget-body">
+        <div class="budget-badge"><i class="fa-solid fa-calculator"></i> <span data-i18n="budgetSimulatorBadge">Bütçe Simülatörü</span></div>
+        <h2 id="budgetTitle" class="budget-headline" data-i18n="budgetSimulatorTitle">Etkileşimli Seyahat Bütçe Simülatörü</h2>
+        <p class="budget-sub" data-i18n="budgetSimulatorSub">Şehrin maliyet endeksine ve seyahat tarzınıza göre tahmini harcamalarınızı simüle edin.</p>
+
+        <div class="budget-grid-layout">
+          <!-- Configuration Form -->
+          <div class="budget-form-col">
+            
+            <!-- City Selection -->
+            <div class="input-group">
+              <label for="budgetCitySelect" class="form-label" data-i18n="destinationCity">Hedef Şehir</label>
+              <select id="budgetCitySelect" class="app-select full-width" aria-label="Select City for budget calculation"></select>
+            </div>
+
+            <!-- Travel Style Selector -->
+            <div class="input-group">
+              <label class="form-label" data-i18n="travelStyleTier">Seyahat Tarzı</label>
+              <div class="travel-style-pills" role="radiogroup" aria-label="Travel Style">
+                <button type="button" class="style-pill active" data-style="backpacker" role="radio" aria-checked="true">
+                  <i class="fa-solid fa-person-hiking"></i>
+                  <span data-i18n="backpacker">Sırt Çantalı</span>
+                  <small data-i18n="backpackerSub">Hosteller ve sokak lezzetleri</small>
+                </button>
+                <button type="button" class="style-pill" data-style="balanced" role="radio" aria-checked="false">
+                  <i class="fa-solid fa-hotel"></i>
+                  <span data-i18n="balanced">Dengeli</span>
+                  <small data-i18n="balancedSub">Butik oteller ve yerel lezzetler</small>
+                </button>
+                <button type="button" class="style-pill" data-style="luxury" role="radio" aria-checked="false">
+                  <i class="fa-solid fa-champagne-glasses"></i>
+                  <span data-i18n="luxury">Lüks</span>
+                  <small data-i18n="luxurySub">5 yıldızlı oteller & gurme restoranlar</small>
+                </button>
+              </div>
+            </div>
+
+            <!-- Number of Days Slider -->
+            <div class="input-group">
+              <div class="slider-label-row">
+                <label for="budgetDaysRange" class="form-label" data-i18n="durationDays">Süre (Gün)</label>
+                <span id="budgetDaysVal" class="slider-numeric-val">5 Gün</span>
+              </div>
+              <input type="range" id="budgetDaysRange" min="1" max="21" value="5" class="app-range" aria-label="Trip duration in days">
+            </div>
+
+            <!-- Number of Travelers -->
+            <div class="input-group">
+              <div class="slider-label-row">
+                <label for="budgetTravelersRange" class="form-label" data-i18n="travelers">Gezgin Sayısı</label>
+                <span id="budgetTravelersVal" class="slider-numeric-val">2 Kişi</span>
+              </div>
+              <input type="range" id="budgetTravelersRange" min="1" max="6" value="2" class="app-range" aria-label="Number of travelers">
+            </div>
+
+          </div>
+
+          <!-- Calculation Result Live Card -->
+          <div class="budget-result-col">
+            <div class="budget-card">
+              <div class="budget-city-meta">
+                <span id="budgetResultFlag" class="calc-flag">🇯🇵</span>
+                <div>
+                  <h4 id="budgetResultCity">Tokyo, Japonya</h4>
+                  <span id="budgetResultStyle" class="calc-style-badge">Dengeli Seyahat</span>
+                </div>
+              </div>
+
+              <div class="budget-grand-total">
+                <span class="total-label" data-i18n="estimatedTotalOutlay">Tahmini Toplam Harcama</span>
+                <div class="total-amount-row">
+                  <span class="currency-symbol">$</span>
+                  <span id="budgetTotalUSD" class="big-number">1,850</span>
+                  <span class="currency-tag">USD</span>
+                </div>
+                <div id="budgetTotalLocalRow" class="total-local-row">
+                  ≈ <span id="budgetTotalLocal">275,000</span> <span id="budgetLocalCurrency">JPY</span>
+                </div>
+              </div>
+
+              <!-- Cost Category Breakdown -->
+              <div class="cost-breakdown-list">
+                <div class="breakdown-item">
+                  <span class="cat-label"><i class="fa-solid fa-bed"></i> <span data-i18n="lodgingAndStays">Konaklama</span></span>
+                  <span id="costLodging" class="cat-val">$800</span>
+                </div>
+                <div class="breakdown-item">
+                  <span class="cat-label"><i class="fa-solid fa-utensils"></i> <span data-i18n="diningAndDrinks">Yeme & İçme</span></span>
+                  <span id="costDining" class="cat-val">$500</span>
+                </div>
+                <div class="breakdown-item">
+                  <span class="cat-label"><i class="fa-solid fa-ticket"></i> <span data-i18n="sightseeingAndGuides">Geziler & Girişler</span></span>
+                  <span id="costActivities" class="cat-val">$320</span>
+                </div>
+                <div class="breakdown-item">
+                  <span class="cat-label"><i class="fa-solid fa-train-subway"></i> <span data-i18n="transitAndRail">Ulaşım</span></span>
+                  <span id="costTransit" class="cat-val">$230</span>
+                </div>
+              </div>
+
+              <div class="budget-tip-box">
+                <i class="fa-solid fa-lightbulb"></i>
+                <span id="budgetSavingsTip">Yerel tren kartı edinerek ve mahalle arası lokantalarda yemek yiyerek %25 tasarruf edebilirsiniz.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- DRAWER: TRAVEL VAULT / BUCKET LIST & ITINERARY -->
+  <!-- ============================================== -->
+  <aside id="vaultDrawer" class="vault-drawer hidden" role="dialog" aria-modal="true" aria-labelledby="vaultDrawerTitle">
+    <div class="vault-drawer-header">
+      <div class="vault-title-group">
+        <i class="fa-solid fa-box-archive vault-icon"></i>
+        <div>
+          <h3 id="vaultDrawerTitle" data-i18n="myTravelVault">Seyahat Kasam</h3>
+          <span id="vaultSubtitle" class="vault-subtitle" data-i18n="vaultSubtitle">Çevrimdışı Planlayıcı & Yer İmleri</span>
+        </div>
+      </div>
+      <button id="vaultCloseBtn" class="action-circle-btn close-btn" aria-label="Close Travel Vault">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Vault Subtabs -->
+    <div class="vault-tabs-nav" role="tablist">
+      <button class="vault-tab-btn active" data-vtab="cities" role="tab" aria-selected="true">
+        <i class="fa-solid fa-city"></i> <span data-i18n="savedCitiesTab">Kayıtlı Şehirler</span> (<span id="vaultCitiesCount">0</span>)
+      </button>
+      <button class="vault-tab-btn" data-vtab="attractions" role="tab" aria-selected="false">
+        <i class="fa-solid fa-map-pin"></i> <span data-i18n="attractionsTab">Gezilecek Yerler</span> (<span id="vaultAttractionsCount">0</span>)
+      </button>
+      <button class="vault-tab-btn" data-vtab="notes" role="tab" aria-selected="false">
+        <i class="fa-solid fa-list-check"></i> <span data-i18n="packingAndNotesTab">Bavul & Notlar</span>
+      </button>
+    </div>
+
+    <!-- Vault Content Pane -->
+    <div class="vault-pane-body" id="vaultBody">
+      <!-- Injected dynamically -->
+    </div>
+
+    <!-- Vault Footer Actions -->
+    <div class="vault-footer">
+      <button id="vaultExportBtn" class="btn-secondary full-width">
+        <i class="fa-solid fa-file-export"></i> <span data-i18n="exportPrintBtn">Gezi Planını Yazdır / Dışa Aktar</span>
+      </button>
+      <button id="vaultClearBtn" class="btn-text danger-text">
+        <i class="fa-regular fa-trash-can"></i> <span data-i18n="clearAllSaved">Tüm Kayıtları Temizle</span>
+      </button>
+    </div>
+  </aside>
+  <div id="vaultBackdrop" class="drawer-backdrop hidden"></div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toastContainer" class="toast-container" role="status" aria-live="polite"></div>
+
+  <!-- FOOTER -->
+  <footer class="app-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-col brand-col">
+        <div class="brand-wrapper">
+          <i class="fa-solid fa-earth-americas brand-icon"></i>
+          <span class="brand-title">Terra<span class="highlight">Nova</span></span>
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">
+          Otonom çoklu ajan mimarisiyle tasarlandı. Gezginlere, şehir düşkünü hayalperestlere ve anlatılmamış hikayelerin peşinde koşanlara adanmıştır.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footerNavigation">Navigasyon</h4>
+        <ul class="footer-links">
+          <li><a href="#" id="footerScrollTop"><i class="fa-solid fa-arrow-up"></i> <span data-i18n="footerReturnTop">Yukarı Dön</span></a></li>
+          <li><a href="#" id="footerOpenRoulette"><i class="fa-solid fa-dice-d20"></i> <span data-i18n="surpriseMeBtn">Beni Şaşırt</span></a></li>
+          <li><a href="#" id="footerOpenBudget"><i class="fa-solid fa-calculator"></i> <span data-i18n="budgetBtn">Bütçe Simülatörü</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footerDesignPhil">Tasarım Felsefesi</h4>
+        <p class="footer-sub" data-i18n="footerDesignText">
+          Dinamik glassmorphism, responsive mikro etkileşimler, çevrimdışı öncelikli saklama ve gerçek zamanlı sentezlenmiş sesler.
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footerCopyright">© 2026 TerraNova Seyahat Rehberi. Meraklı kaşifler için geliştirildi.</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script src="app.js"></script>
+</body>
+</html>

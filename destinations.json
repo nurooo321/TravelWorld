@@ -1,0 +1,1463 @@
+{
+  "meta": {
+    "version": "3.0.0",
+    "bilingual": true,
+    "languages": [
+      "tr",
+      "en"
+    ],
+    "totalDestinations": 10,
+    "regions": [
+      {
+        "id": "All",
+        "en": "All Continents",
+        "tr": "Tüm Kıtalar"
+      },
+      {
+        "id": "Europe",
+        "en": "Europe",
+        "tr": "Avrupa"
+      },
+      {
+        "id": "Asia",
+        "en": "Asia",
+        "tr": "Asya"
+      },
+      {
+        "id": "Americas",
+        "en": "Americas",
+        "tr": "Amerika"
+      },
+      {
+        "id": "Africa",
+        "en": "Africa",
+        "tr": "Afrika"
+      },
+      {
+        "id": "Oceania",
+        "en": "Oceania",
+        "tr": "Okyanusya"
+      }
+    ],
+    "vibes": [
+      {
+        "id": "All",
+        "en": "All Vibes",
+        "tr": "Tüm Atmosferler"
+      },
+      {
+        "id": "Historic",
+        "en": "Historic",
+        "tr": "Tarihi"
+      },
+      {
+        "id": "Zen & Nature",
+        "en": "Zen & Nature",
+        "tr": "Huzur & Doğa"
+      },
+      {
+        "id": "Foodie Heaven",
+        "en": "Foodie Heaven",
+        "tr": "Gastronomi Cenneti"
+      },
+      {
+        "id": "Cyberpunk",
+        "en": "Cyberpunk",
+        "tr": "Siberpunk"
+      },
+      {
+        "id": "Romantic",
+        "en": "Romantic",
+        "tr": "Romantik"
+      },
+      {
+        "id": "Adventure",
+        "en": "Adventure",
+        "tr": "Macera"
+      },
+      {
+        "id": "Art & Design",
+        "en": "Art & Design",
+        "tr": "Sanat & Tasarım"
+      },
+      {
+        "id": "Nightlife",
+        "en": "Nightlife",
+        "tr": "Gece Hayatı"
+      }
+    ]
+  },
+  "destinations": [
+    {
+      "id": "tokyo-jp",
+      "name": {
+        "en": "Tokyo",
+        "tr": "Tokyo"
+      },
+      "country": {
+        "en": "Japan",
+        "tr": "Japonya"
+      },
+      "region": "Asia",
+      "flag": "🇯🇵",
+      "tagline": {
+        "en": "Neon-lit hypermodernity dancing with timeless Shinto serenity",
+        "tr": "Zamansız Şinto dinginliğiyle dans eden neon ışıklı hiper-modernite"
+      },
+      "heroImage": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1600&q=80",
+      "thumbnail": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80",
+      "currency": {
+        "code": "JPY",
+        "symbol": "¥",
+        "rateToUSD": 0.0067
+      },
+      "language": {
+        "en": "Japanese",
+        "tr": "Japonca"
+      },
+      "timeZone": "GMT+9",
+      "costLevel": "9376$",
+      "costIndex": 3,
+      "bestTimeToVisit": {
+        "en": "March - May (Cherry Blossoms) & Oct - Nov (Autumn Foliage)",
+        "tr": "Mart - Mayıs (Sakura Çiçekleri) & Ekim - Kasım (Sonbahar Kızılı)"
+      },
+      "weather": {
+        "summer": {
+          "en": "26°C - 32°C (Warm & Humid)",
+          "tr": "26°C - 32°C (Sıcak & Nemli)"
+        },
+        "winter": {
+          "en": "3°C - 12°C (Crisp & Sunny)",
+          "tr": "3°C - 12°C (Açık Güneşli Soğuk)"
+        },
+        "springFall": {
+          "en": "15°C - 22°C (Ideal)",
+          "tr": "15°C - 22°C (En İdeal Gezi Dönemi)"
+        }
+      },
+      "vibes": [
+        "Cyberpunk",
+        "Foodie Heaven",
+        "Art & Design",
+        "Nightlife"
+      ],
+      "soundscape": "cyberpunk_rain",
+      "culturalTip": {
+        "en": "Quiet voices on public transit are customary. When handing over payment cards or cash, use both hands with the small tray provided at cash registers.",
+        "tr": "Toplu taşımada sessiz konuşmak esastır. Kasa ödemelerinde nakit ya da kartınızı iki elinizle tutarak sunulan küçük tepsiye bırakın."
+      },
+      "coordinates": {
+        "lat": 35.6762,
+        "lng": 139.6503
+      },
+      "localEats": [
+        {
+          "name": "Tsukemen (Fuunji)",
+          "desc": {
+            "en": "Thick chewy noodles dipped into an intensely savory, 14-hour chicken & bonito broth.",
+            "tr": "14 saat kaynatılmış yoğun tavuk ve palamut sosuna batırılan kalın ramen eriştesi."
+          }
+        },
+        {
+          "name": "Matcha Parfait in Ginza",
+          "desc": {
+            "en": "Multi-layered artisanal green tea soft serve with warabi mochi and red bean.",
+            "tr": "Geleneksel warabi mochi ve tatlı azuki fasulyeli kat kat birinci sınıf yeşil çay parfe."
+          }
+        },
+        {
+          "name": "Yakitori Alley (Omoide Yokocho)",
+          "desc": {
+            "en": "Smoky charcoal skewers tucked into nostalgic Showa-era alleys under the train tracks.",
+            "tr": "Tren raylarının altındaki nostaljik Showa dönemi sokaklarında közde pişen çıtır tavuk şişler."
+          }
+        }
+      ],
+      "attractions": [
+        {
+          "id": "tky-1",
+          "name": {
+            "en": "Senso-ji Temple & Asakusa Alleys",
+            "tr": "Senso-ji Tapınağı ve Asakusa Sokakları"
+          },
+          "category": "Historic",
+          "rating": 4.9,
+          "reviewsCount": 4210,
+          "costEstimate": {
+            "en": "Free (Temple grounds)",
+            "tr": "Ücretsiz (Tapınak alanı)"
+          },
+          "duration": {
+            "en": "2.5 hours",
+            "tr": "2,5 saat"
+          },
+          "bestHour": {
+            "en": "06:30 AM before crowds, or 08:00 PM for illuminated pagoda",
+            "tr": "Kalabalıktan önce 06:30 veya ışıklandırılmış pagoda için 20:00"
+          },
+          "photoSpotTips": {
+            "en": "Stand at the edge of Kaminarimon Gate using an ultra-wide angle looking up at the crimson giant lantern.",
+            "tr": "Kaminarimon Kapısı önünde ultra geniş açıyla devasa kırmızı fenere alt açıdan bakın."
+          },
+          "insiderSecret": {
+            "en": "Venture two blocks west of Nakamise street to find 70-year-old traditional senbei bakers roasting over Binchotan coals.",
+            "tr": "Nakamise caddesinin iki sokak batısında Binchotan kömüründe pirinç patlağı pişiren 70 yıllık fırını keşfedin."
+          },
+          "image": "https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=800&q=80",
+          "description": {
+            "en": "Tokyo's oldest Buddhist temple founded in 645 AD. Incense blends with centuries of folklore.",
+            "tr": "MS 645 yılında kurulan Tokyo'nun en eski Budist tapınağı. Asırlık tütsü kokuları Edo ruhuyla harmanlanıyor."
+          }
+        },
+        {
+          "id": "tky-2",
+          "name": {
+            "en": "Shibuya Sky & The Crossing",
+            "tr": "Shibuya Sky & Yaya Geçidi"
+          },
+          "category": "Architecture",
+          "rating": 4.8,
+          "reviewsCount": 3890,
+          "costEstimate": {
+            "en": "¥2,200 ( USD)",
+            "tr": "2.200 ¥ (Yaklaşık 15 USD)"
+          },
+          "duration": {
+            "en": "1.5 hours",
+            "tr": "1,5 saat"
+          },
+          "bestHour": {
+            "en": "30 mins before golden hour sunset",
+            "tr": "Gün batımı altın saatinden 30 dakika önce"
+          },
+          "photoSpotTips": {
+            "en": "Glass-corner Sky Edge offers unobstructed views of Mount Fuji on clear days.",
+            "tr": "Cam köşeli Sky Edge açık günlerde Fuji Dağı'nın kesintisiz silüetini sunar."
+          },
+          "insiderSecret": {
+            "en": "Book the 4:40 PM slot exactly 28 days in advance to catch both twilight and neon lights waking up.",
+            "tr": "Alacakaranlığı ve uyanan neonları yakalamak için 28 gün önceden 16:40 seansına bilet alın."
+          },
+          "image": "https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=800&q=80",
+          "description": {
+            "en": "A 229m open-air observation deck floating above the world's most kinetic crossing.",
+            "tr": "Dünyanın en hareketli kavşağının 229 metre üzerinde havada asılı duran açık hava seyir terası."
+          }
+        }
+      ],
+      "miniItinerary": [
+        {
+          "day": 1,
+          "title": {
+            "en": "Ancient Edo to Neon Clouds",
+            "tr": "Kadim Edo'dan Neon Bulutlara"
+          },
+          "morning": {
+            "en": "Dawn incense ritual at Senso-ji, followed by freshly baked melonpan in Asakusa.",
+            "tr": "Senso-ji'de şafak tütsü ritüeli ve Asakusa fırınlarından sıcacık melonpan ekmeği."
+          },
+          "afternoon": {
+            "en": "Sumida river water bus to Odaiba; digital art immersion at teamLab Planets.",
+            "tr": "Sumida Nehri üzerinde tekneyle fütüristik Odaiba'ya geçiş ve teamLab Planets ziyareti."
+          },
+          "evening": {
+            "en": "Sunset at Shibuya Sky, crossing the neon sea, then steaming ramen in back alleys.",
+            "tr": "Shibuya Sky'da gün batımı, neon kavşaktan geçiş ve ara sokaklarda dumanı tüten ramen keyfi."
+          }
+        }
+      ]
+    },
+    {
+      "id": "kyoto-jp",
+      "name": {
+        "en": "Kyoto",
+        "tr": "Kyoto"
+      },
+      "country": {
+        "en": "Japan",
+        "tr": "Japonya"
+      },
+      "region": "Asia",
+      "flag": "🇯🇵",
+      "tagline": {
+        "en": "The spiritual heartland of zen stone gardens, moss paths, and matcha rites",
+        "tr": "Zen taş bahçelerinin, yosunlu patikaların ve matcha seremonilerinin manevi kalbi"
+      },
+      "heroImage": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1600&q=80",
+      "thumbnail": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80",
+      "currency": {
+        "code": "JPY",
+        "symbol": "¥",
+        "rateToUSD": 0.0067
+      },
+      "language": {
+        "en": "Japanese",
+        "tr": "Japonca"
+      },
+      "timeZone": "GMT+9",
+      "costLevel": "9376",
+      "costIndex": 2,
+      "bestTimeToVisit": {
+        "en": "April (Cherry blossoms) & November (Crimson maple foliage)",
+        "tr": "Nisan (Sakura dönemi) & Kasım (Kızıl akçaağaç yaprakları)"
+      },
+      "weather": {
+        "summer": {
+          "en": "24°C - 33°C (Lush greens, occasional rain)",
+          "tr": "24°C - 33°C (Yemyeşil doğa, ara sıra yaz yağmuru)"
+        },
+        "winter": {
+          "en": "1°C - 10°C (Crisp with snow dustings)",
+          "tr": "1°C - 10°C (Tapınak çatılarında hafif kar tozu)"
+        },
+        "springFall": {
+          "en": "12°C - 20°C (Unmatched foliage splendor)",
+          "tr": "12°C - 20°C (Eşsiz sonbahar ve bahar görsel şöleni)"
+        }
+      },
+      "vibes": [
+        "Zen & Nature",
+        "Historic",
+        "Romantic",
+        "Art & Design"
+      ],
+      "soundscape": "zen_bamboo",
+      "culturalTip": {
+        "en": "Treat Gion's geiko with reverence; photography is strictly forbidden on private lanes.",
+        "tr": "Gion geyşalarına saygıyla yaklaşın; özel ara sokaklarda fotoğraf çekimi kesinlikle yasaktır."
+      },
+      "coordinates": {
+        "lat": 35.0116,
+        "lng": 135.7681
+      },
+      "localEats": [
+        {
+          "name": "Kaiseki Ryori",
+          "desc": {
+            "en": "Multi-course culinary poetry balancing seasonal textures and pottery.",
+            "tr": "Mevsimlik tatları ve el yapımı seramikleri dengeleyen geleneksel saray menüsü."
+          }
+        },
+        {
+          "name": "Nanzenji Yudofu",
+          "desc": {
+            "en": "Silken artisan tofu simmered with kombu in tranquil courtyard pavilions.",
+            "tr": "Nanzenji manastır bahçelerinde yosun suyuyla demlenen ipeksi taze tofu."
+          }
+        }
+      ],
+      "attractions": [
+        {
+          "id": "kyo-1",
+          "name": {
+            "en": "Fushimi Inari Taisha (Upper Mountain Path)",
+            "tr": "Fushimi Inari Taisha (Zirve Yolu)"
+          },
+          "category": "Historic",
+          "rating": 4.9,
+          "reviewsCount": 6420,
+          "costEstimate": {
+            "en": "Free",
+            "tr": "Ücretsiz"
+          },
+          "duration": {
+            "en": "3 hours",
+            "tr": "3 saat"
+          },
+          "bestHour": {
+            "en": "06:00 AM before dawn crowds",
+            "tr": "Şafak vakti 06:00 kalabalıklar başlamadan"
+          },
+          "photoSpotTips": {
+            "en": "Climb past Yotsutsuji junction; upper torii paths have zero crowds.",
+            "tr": "Yotsutsuji kavşağının üstüne tırmanın; üst torii koridorlarında hiç kalabalık yoktur."
+          },
+          "insiderSecret": {
+            "en": "Stop at the mid-mountain teahouse for kitsune udon while watching views over Kyoto.",
+            "tr": "Dağ yamacındaki çayhanede Kyoto vadisi manzarasına karşı tilki udonu tadın."
+          },
+          "image": "https://images.unsplash.com/photo-1478436127897-769e00d2c715?auto=format&fit=crop&w=800&q=80",
+          "description": {
+            "en": "Over 10,000 vivid vermilion torii gates winding up sacred Mount Inari slopes.",
+            "tr": "Kutsal Inari Dağı yamaçlarına tırmanan 10.000'i aşkın parlak kırmızı torii kemeri."
+          }
+        }
+      ],
+      "miniItinerary": [
+        {
+          "day": 1,
+          "title": {
+            "en": "Gates of Fox Spirits & Old Teahouses",
+            "tr": "Tilki Ruhlarının Kapıları ve Antik Çayhaneler"
+          },
+          "morning": {
+            "en": "Early climb through vermilion torii arches at Fushimi Inari.",
+            "tr": "Fushimi Inari'nin kırmızı kapıları arasında sabahın ilk ışıklarıyla yürüyüş."
+          },
+          "afternoon": {
+            "en": "Stroll down the Philosopher's Path lined with canal reflections.",
+            "tr": "Kanal boyunca uzanan Filozof Yolu'nda kiraz ağaçları altında yürüyüş."
+          },
+          "evening": {
+            "en": "Quiet kaiseki dinner beside Shirakawa canal under weeping willows.",
+            "tr": "Shirakawa kanalı kıyısında salkımsöğütler altında kaiseki akşam yemeği."
+          }
+        }
+      ]
+    },
+    {
+      "id": "rome-it",
+      "name": {
+        "en": "Rome",
+        "tr": "Roma"
+      },
+      "country": {
+        "en": "Italy",
+        "tr": "İtalya"
+      },
+      "region": "Europe",
+      "flag": "🇮🇹",
+      "tagline": {
+        "en": "An open-air museum where three millennia of empire breathe beneath golden light",
+        "tr": "Üç bin yıllık imparatorluğun altın bir ışık altında nefes aldığı açık hava müzesi"
+      },
+      "heroImage": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=1600&q=80",
+      "thumbnail": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=600&q=80",
+      "currency": {
+        "code": "EUR",
+        "symbol": "€",
+        "rateToUSD": 1.08
+      },
+      "language": {
+        "en": "Italian",
+        "tr": "İtalyanca"
+      },
+      "timeZone": "GMT+1",
+      "costLevel": "9376",
+      "costIndex": 2,
+      "bestTimeToVisit": {
+        "en": "April - June & September - October",
+        "tr": "Nisan - Haziran & Eylül - Ekim"
+      },
+      "weather": {
+        "summer": {
+          "en": "22°C - 34°C (Sunny, warm Mediterranean midday)",
+          "tr": "22°C - 34°C (Güneşli Akdeniz sıcağı)"
+        },
+        "winter": {
+          "en": "7°C - 14°C (Gentle winter, uncrowded alleys)",
+          "tr": "7°C - 14°C (Ilıman kış, sakin tarihi sokaklar)"
+        },
+        "springFall": {
+          "en": "14°C - 23°C (Perfection for walking)",
+          "tr": "14°C - 23°C (Şehri yürüyerek keşfetmek için kusursuz)"
+        }
+      },
+      "vibes": [
+        "Historic",
+        "Foodie Heaven",
+        "Romantic",
+        "Art & Design"
+      ],
+      "soundscape": "mediterranean_breeze",
+      "culturalTip": {
+        "en": "Espresso is taken standing at the bar; ordering cappuccino after 11:00 AM is considered a faux pas.",
+        "tr": "Espresso barda ayakta içilir; saat 11:00'den sonra cappuccino siparişi vermek Romalılarca yadırganır."
+      },
+      "coordinates": {
+        "lat": 41.9028,
+        "lng": 12.4964
+      },
+      "localEats": [
+        {
+          "name": "Cacio e Pepe in Testaccio",
+          "desc": {
+            "en": "Pecorino Romano, toasted black pepper, and pasta water emulsion.",
+            "tr": "Pecorino Romano peyniri ve taze karabiberle kremlenen Roma klasiği."
+          }
+        },
+        {
+          "name": "Maritozzo con Panna",
+          "desc": {
+            "en": "Fluffy sweet brioche bun overflowing with fresh whipped chantilly cream.",
+            "tr": "İçi bol taze çırpılmış kremayla doldurulmuş yumuşacık Roma çöreği."
+          }
+        }
+      ],
+      "attractions": [
+        {
+          "id": "rom-1",
+          "name": {
+            "en": "The Pantheon & Piazza della Rotonda",
+            "tr": "Panteon ve Piazza della Rotonda"
+          },
+          "category": "Architecture",
+          "rating": 4.9,
+          "reviewsCount": 5830,
+          "costEstimate": {
+            "en": "€5 (.40 USD)",
+            "tr": "5 € (Yaklaşık 5.40 USD)"
+          },
+          "duration": {
+            "en": "1 hour",
+            "tr": "1 saat"
+          },
+          "bestHour": {
+            "en": "12:00 PM noon when sunlight beams directly through the oculus",
+            "tr": "Güneş ışığının tepe deliğinden içeri süzüldüğü 12:00 öğle saati"
+          },
+          "photoSpotTips": {
+            "en": "Wide lens from the fountain capturing massive Corinthian portico with lively cafe tables.",
+            "tr": "Meydandaki çeşmenin kenarından heybetli Korint sütunlarını kafelerle birlikte kadrajlayın."
+          },
+          "insiderSecret": {
+            "en": "When it rains, water drains through 22 discreet micro-holes built into the marble floor 1,900 years ago.",
+            "tr": "Yağmur yağdığında su, 1.900 yıl önce mermer zemine gizlenen 22 adet mikro drenaj deliğinden tahliye olur."
+          },
+          "image": "https://images.unsplash.com/photo-1542820229-081e0c12af0b?auto=format&fit=crop&w=800&q=80",
+          "description": {
+            "en": "World's largest unreinforced concrete dome, standing in pristine grandeur since 125 AD.",
+            "tr": "MS 125 yılından bu yana bozulmadan ayakta duran dünyanın en büyük donatısız beton kubbesi."
+          }
+        }
+      ],
+      "miniItinerary": [
+        {
+          "day": 1,
+          "title": {
+            "en": "Emperors, Fountains & Roman Flavors",
+            "tr": "İmparatorlar, Çeşmeler ve Roma Lezzetleri"
+          },
+          "morning": {
+            "en": "Walk Palatine Hill pine groves before morning crowds hit Colosseum.",
+            "tr": "Kolezyum kalabalığı oluşmadan önce Palatino Tepesi'nin çamları arasında yürüyüş."
+          },
+          "afternoon": {
+            "en": "Stroll Campo de' Fiori, toss a coin into Trevi, and admire Pantheon.",
+            "tr": "Campo de' Fiori pazarında gezinti, Trevi'ye para atma ve Panteon kubbesinin ihtişamı."
+          },
+          "evening": {
+            "en": "Aperitivo in Piazza Navona followed by handmade cacio e pepe in Trastevere.",
+            "tr": "Piazza Navona'da aperitivo ve Trastevere sokaklarında el yapımı Cacio e Pepe ziyafeti."
+          }
+        }
+      ]
+    },
+    {
+      "id": "paris-fr",
+      "name": {
+        "en": "Paris",
+        "tr": "Paris"
+      },
+      "country": {
+        "en": "France",
+        "tr": "Fransa"
+      },
+      "region": "Europe",
+      "flag": "🇫🇷",
+      "tagline": {
+        "en": "The City of Light where art, romance, and cafe culture form an enduring lifestyle",
+        "tr": "Sanatın, romantizmin ve kafe kültürünün zamansız bir yaşam biçimine dönüştüğü Işık Şehri"
+      },
+      "heroImage": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1600&q=80",
+      "thumbnail": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80",
+      "currency": {
+        "code": "EUR",
+        "symbol": "€",
+        "rateToUSD": 1.08
+      },
+      "language": {
+        "en": "French",
+        "tr": "Fransızca"
+      },
+      "timeZone": "GMT+1",
+      "costLevel": "9376$",
+      "costIndex": 3,
+      "bestTimeToVisit": {
+        "en": "May - June & September - October",
+        "tr": "Mayıs - Haziran & Eylül - Ekim"
+      },
+      "weather": {
+        "summer": {
+          "en": "18°C - 28°C (Long light evenings until 10 PM)",
+          "tr": "18°C - 28°C (Saat 22:00'ye kadar süren uzun aydınlık akşamlar)"
+        },
+        "winter": {
+          "en": "3°C - 8°C (Cozy bistros and winter lights)",
+          "tr": "3°C - 8°C (Sıcak bistrolar ve ışıl ışıl sokaklar)"
+        },
+        "springFall": {
+          "en": "12°C - 19°C (Chestnut trees in bloom)",
+          "tr": "12°C - 19°C (Çiçek açan kestaneler ve ılık bahar havası)"
+        }
+      },
+      "vibes": [
+        "Romantic",
+        "Art & Design",
+        "Foodie Heaven",
+        "Historic"
+      ],
+      "soundscape": "cafe_accordion",
+      "culturalTip": {
+        "en": "Always greet with a polite Bonjour Madame or Monsieur before ordering or asking questions.",
+        "tr": "Bir dükkana veya kafeye girdiğinizde soru sormadan önce mutlaka nazik bir Bonjour ile selam verin."
+      },
+      "coordinates": {
+        "lat": 48.8566,
+        "lng": 2.3522
+      },
+      "localEats": [
+        {
+          "name": "Croissant au Beurre",
+          "desc": {
+            "en": "Flaky, golden 27-layer all-butter croissant from an artisan boulangerie.",
+            "tr": "Geleneksel fırınlarda saf tereyağıyla 27 kat katmanlanan çıtır altın sarısı kruvasan."
+          }
+        }
+      ],
+      "attractions": [
+        {
+          "id": "par-1",
+          "name": {
+            "en": "Montmartre & Place du Tertre Secret Paths",
+            "tr": "Montmartre Tepesi ve Gizli Sokaklar"
+          },
+          "category": "Romantic",
+          "rating": 4.8,
+          "reviewsCount": 5400,
+          "costEstimate": {
+            "en": "Free",
+            "tr": "Ücretsiz"
+          },
+          "duration": {
+            "en": "2.5 hours",
+            "tr": "2,5 saat"
+          },
+          "bestHour": {
+            "en": "08:00 AM before portrait artists set up",
+            "tr": "Ressamlar tezgah açmadan önceki sabah saat 08:00"
+          },
+          "photoSpotTips": {
+            "en": "Rue de l'Abreuvoir facing La Maison Rose in early morning light.",
+            "tr": "Sabah ışığında pembe cepheli La Maison Rose'a bakan Rue de l'Abreuvoir sokağı."
+          },
+          "insiderSecret": {
+            "en": "Behind Sacre-Coeur lies Clos Montmartre, an active hidden vineyard producing wine since 1933.",
+            "tr": "Sacre-Coeur'ün hemen arkasında 1933'ten beri şarap üreten gizli bir bağ olan Clos Montmartre yer alır."
+          },
+          "image": "https://images.unsplash.com/photo-1509299349698-dd22323b5963?auto=format&fit=crop&w=800&q=80",
+          "description": {
+            "en": "Bohemian hilltop where Picasso, Van Gogh, and Modigliani painted atop winding cobblestone stairs.",
+            "tr": "Picasso, Van Gogh ve Modigliani'nin bir zamanlar atölye kurduğu Arnavut kaldırımlı bohem sanat tepesi."
+          }
+        }
+      ],
+      "miniItinerary": [
+        {
+          "day": 1,
+          "title": {
+            "en": "Left Bank Strolls & Impressionist Light",
+            "tr": "Sol Yaka Yürüyüşleri ve Empresyonist Işık"
+          },
+          "morning": {
+            "en": "Pain au chocolat in Marais followed by Shakespeare & Company browsing.",
+            "tr": "Marais'de çikolatalı çörek ve tarihi Shakespeare & Company kitabevinde mola."
+          },
+          "afternoon": {
+            "en": "Impressionist art at Musee d'Orsay and Luxembourg Gardens bench.",
+            "tr": "Musee d'Orsay'de empresyonist eserler ve Lüksemburg Bahçeleri'nde dinlenme."
+          },
+          "evening": {
+            "en": "Steak frites bistro dinner in Saint-Germain and sparkling Eiffel tower views.",
+            "tr": "Saint-Germain'de bistro akşam yemeği ve Sen Nehri kıyısından Eyfel Kulesi'ni izleme."
+          }
+        }
+      ]
+    },
+    {
+      "id": "reykjavik-is",
+      "name": {
+        "en": "Reykjavik",
+        "tr": "Reykjavik"
+      },
+      "country": {
+        "en": "Iceland",
+        "tr": "İzlanda"
+      },
+      "region": "Europe",
+      "flag": "🇮🇸",
+      "tagline": {
+        "en": "A colorful Nordic outpost where glaciers, geysers, and auroras ignite the wilderness",
+        "tr": "Buzulların, gayzerlerin ve kutup ışıklarının vahşi doğayı aydınlattığı rengarenk kuzey başkenti"
+      },
+      "heroImage": "https://images.unsplash.com/photo-1504893524553-b855bce32c67?auto=format&fit=crop&w=1600&q=80",
+      "thumbnail": "https://images.unsplash.com/photo-1504893524553-b855bce32c67?auto=format&fit=crop&w=600&q=80",
+      "currency": {
+        "code": "ISK",
+        "symbol": "kr",
+        "rateToUSD": 0.0073
+      },
+      "language": {
+        "en": "Icelandic",
+        "tr": "İzlandaca"
+      },
+      "timeZone": "GMT+0",
+      "costLevel": "9376$",
+      "costIndex": 3,
+      "bestTimeToVisit": {
+        "en": "June - Aug (Midnight Sun) & Sept - March (Northern Lights)",
+        "tr": "Haziran - Ağustos (Gece Yarısı Güneşi) & Eylül - Mart (Kuzey Işıkları)"
+      },
+      "weather": {
+        "summer": {
+          "en": "10°C - 15°C (24h daylight, vibrant mosses)",
+          "tr": "10°C - 15°C (24 saat gün ışığı, canlı yosunlar)"
+        },
+        "winter": {
+          "en": "-2°C - 4°C (Snowy wonderland, aurora activity)",
+          "tr": "-2°C - 4°C (Kar manzaraları ve kuzey ışıkları)"
+        },
+        "springFall": {
+          "en": "4°C - 9°C (Dramatic sky shifts)",
+          "tr": "4°C - 9°C (Dramatik gökyüzü renkleri)"
+        }
+      },
+      "vibes": [
+        "Zen & Nature",
+        "Adventure",
+        "Art & Design"
+      ],
+      "soundscape": "arctic_wind",
+      "culturalTip": {
+        "en": "Showering thoroughly before entering geothermal sundlaugar pools is strictly followed.",
+        "tr": "Termal havuzlara (sundlaugar) girmeden önce sabunla iyice yıkanmak titizlikle uygulanan bir kuraldır."
+      },
+      "coordinates": {
+        "lat": 64.1466,
+        "lng": -21.9426
+      },
+      "localEats": [
+        {
+          "name": "Kjotsupa (Lamb Soup)",
+          "desc": {
+            "en": "Hearty broth slow simmered with free-roaming mountain lamb and root vegetables.",
+            "tr": "Dağlarda otlayan İzlanda kuzusu ve kök sebzelerle saatlerce demlenen sıcacık şifalı çorba."
+          }
+        }
+      ],
+      "attractions": [
+        {
+          "id": "rey-1",
+          "name": {
+            "en": "Sky Lagoon Ocean Geothermal Bath",
+            "tr": "Sky Lagoon Okyanus Jeotermal Lagünü"
+          },
+          "category": "Zen & Nature",
+          "rating": 4.9,
+          "reviewsCount": 2740,
+          "costEstimate": {
+            "en": "9,990 ISK ( USD)",
+            "tr": "9.990 ISK (Yaklaşık 72 USD)"
+          },
+          "duration": {
+            "en": "3 hours",
+            "tr": "3 saat"
+          },
+          "bestHour": {
+            "en": "Sunset into twilight for aurora viewing from warm waters",
+            "tr": "Sıcak suların içinden kuzey ışıklarını izlemek için gün batımı"
+          },
+          "photoSpotTips": {
+            "en": "The 70m infinity edge looking straight into the North Atlantic ocean.",
+            "tr": "Doğrudan Kuzey Atlantik Okyanusu'na uzanan 70 metrelik sonsuzluk havuzu kenarı."
+          },
+          "insiderSecret": {
+            "en": "Experience the 7-step ritual combining cold plunge, panoramic sauna, and sea salt scrub.",
+            "tr": "Soğuk şok, panoramik sauna ve deniz tuzu peelingini birleştiren 7 adımlı İzlanda ritüelini deneyin."
+          },
+          "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+          "description": {
+            "en": "Ocean-edge geothermal infinity pool nestled inside turf walls honoring Icelandic traditions.",
+            "tr": "Kadim İzlanda geleneklerine saygı duruşunda bulunan, okyanus kenarındaki jeotermal sonsuzluk havuzu."
+          }
+        }
+      ],
+      "miniItinerary": [
+        {
+          "day": 1,
+          "title": {
+            "en": "Fire, Ice & Geothermal Tranquility",
+            "tr": "Ateş, Buz ve Jeotermal Dinginlik"
+          },
+          "morning": {
+            "en": "Climb Hallgrimskirkja tower and explore rainbow street boutiques.",
+            "tr": "Hallgrimskirkja kulesinden şehri seyredip gökkuşağı sokağındaki butikleri gezme."
+          },
+          "afternoon": {
+            "en": "Harpa Concert Hall glass facade and harbor fish and chips.",
+            "tr": "Harpa Konser Salonu'nun prizmatik cam mimarisi ve limanda taze balık molası."
+          },
+          "evening": {
+            "en": "Soaking in ocean geothermal springs while scanning for aurora borealis.",
+            "tr": "Okyanus kenarındaki sıcacık jeotermal lagünde kuzey ışıklarını izleme."
+          }
+        }
+      ]
+    },
+    {
+      "id": "marrakech-ma",
+      "name": {
+        "en": "Marrakech",
+        "tr": "Marakeş"
+      },
+      "country": {
+        "en": "Morocco",
+        "tr": "Fas"
+      },
+      "region": "Africa",
+      "flag": "🇲🇦",
+      "tagline": {
+        "en": "The Ochre Oasis of spiced labyrinthine medinas, tranquil riads, and Atlas peaks",
+        "tr": "Baharat kokulu labirent medinaların, huzurlu riadların ve Atlas Dağları'nın Kızıl Vahası"
+      },
+      "heroImage": "https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=1600&q=80",
+      "thumbnail": "https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=600&q=80",
+      "currency": {
+        "code": "MAD",
+        "symbol": "DH",
+        "rateToUSD": 0.1
+      },
+      "language": {
+        "en": "Arabic & Berber",
+        "tr": "Arapça & Berberi Dili"
+      },
+      "timeZone": "GMT+1",
+      "costLevel": "$",
+      "costIndex": 1,
+      "bestTimeToVisit": {
+        "en": "October - April",
+        "tr": "Ekim - Nisan"
+      },
+      "weather": {
+        "summer": {
+          "en": "24°C - 38°C (Dry desert heat, riads are cool)",
+          "tr": "24°C - 38°C (Kuru çöl sıcağı; riad avluları serindir)"
+        },
+        "winter": {
+          "en": "7°C - 19°C (Snowcapped High Atlas peaks in backdrop)",
+          "tr": "7°C - 19°C (Arka planda karlı Atlas zirveleri)"
+        },
+        "springFall": {
+          "en": "16°C - 27°C (Ideal climate)",
+          "tr": "16°C - 27°C (Gezmek için en ideal sıcaklık)"
+        }
+      },
+      "vibes": [
+        "Historic",
+        "Foodie Heaven",
+        "Art & Design",
+        "Adventure"
+      ],
+      "soundscape": "desert_caravan",
+      "culturalTip": {
+        "en": "Mint tea is the ultimate gesture of hospitality; accept with right hand and savor the high pour.",
+        "tr": "Nane çayı Fas misafirperverliğinin simgesidir; bardağı sağ elinizle kabul edin ve köpüğüyle için."
+      },
+      "coordinates": {
+        "lat": 31.6295,
+        "lng": -7.9811
+      },
+      "localEats": [
+        {
+          "name": "Tajine with Prunes",
+          "desc": {
+            "en": "Slow-braised lamb in earthenware dish with saffron and prunes.",
+            "tr": "Toprak kapta safran ve karamelize kuru erikle pişen kuzu tajin."
+          }
+        }
+      ],
+      "attractions": [
+        {
+          "id": "mar-1",
+          "name": {
+            "en": "Jardin Majorelle & YSL Museum",
+            "tr": "Majorelle Bahçesi ve YSL Müzesi"
+          },
+          "category": "Art & Design",
+          "rating": 4.8,
+          "reviewsCount": 4900,
+          "costEstimate": {
+            "en": "150 MAD ( USD)",
+            "tr": "150 MAD (Yaklaşık 15 USD)"
+          },
+          "duration": {
+            "en": "2 hours",
+            "tr": "2 saat"
+          },
+          "bestHour": {
+            "en": "09:00 AM opening time",
+            "tr": "Sabah 09:00 açılış saati"
+          },
+          "photoSpotTips": {
+            "en": "Cobalt Majorelle Blue villa contrasted against giant cacti.",
+            "tr": "Kobalt mavi villa duvarları ile devasa kaktüslerin oluşturduğu renk kontrastı."
+          },
+          "insiderSecret": {
+            "en": "Saint Laurent's ashes were scattered in this botanical garden.",
+            "tr": "Yves Saint Laurent bu bahçeyi kurtarmak için satın almış ve külleri buraya serpilmiştir."
+          },
+          "image": "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?auto=format&fit=crop&w=800&q=80",
+          "description": {
+            "en": "Botanical sanctuary vibrant with cobalt blue architecture and desert flora.",
+            "tr": "Kobalt mavisi villası ve egzotik çöl bitkileriyle göz kamaştıran masalsı botanik vaha."
+          }
+        }
+      ],
+      "miniItinerary": [
+        {
+          "day": 1,
+          "title": {
+            "en": "Cobalt Hues, Spices & Medina Rhythms",
+            "tr": "Kobalt Mavisi, Baharatlar ve Medina Ritimleri"
+          },
+          "morning": {
+            "en": "Morning wander through cobalt walls of Jardin Majorelle.",
+            "tr": "Majorelle Bahçesi'nin bambu yollarında sabah dinginliği."
+          },
+          "afternoon": {
+            "en": "Cedar carvings at Ben Youssef Medersa.",
+            "tr": "Ben Youssef Medresesi'nin büyüleyici sedir oymaları arasında keşif."
+          },
+          "evening": {
+            "en": "Sunset mint tea overlooking Jemaa el-Fnaa square.",
+            "tr": "Jemaa el-Fnaa meydanına bakan terasta gün batımı nane çayı."
+          }
+        }
+      ]
+    },
+    {
+      "id": "cape-town-za",
+      "name": {
+        "en": "Cape Town",
+        "tr": "Cape Town"
+      },
+      "country": {
+        "en": "South Africa",
+        "tr": "Güney Afrika"
+      },
+      "region": "Africa",
+      "flag": "🇿🇦",
+      "tagline": {
+        "en": "Where towering sandstone peaks crash into two dramatic oceans",
+        "tr": "Görkemli kumtaşı zirvelerinin iki vahşi okyanusla buluştuğu doğa harikası"
+      },
+      "heroImage": "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=1600&q=80",
+      "thumbnail": "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=600&q=80",
+      "currency": {
+        "code": "ZAR",
+        "symbol": "R",
+        "rateToUSD": 0.055
+      },
+      "language": {
+        "en": "English & Afrikaans",
+        "tr": "İngilizce & Afrikaans"
+      },
+      "timeZone": "GMT+2",
+      "costLevel": "$",
+      "costIndex": 1,
+      "bestTimeToVisit": {
+        "en": "November - March",
+        "tr": "Kasım - Mart"
+      },
+      "weather": {
+        "summer": {
+          "en": "20°C - 29°C (Breezy, sunny beaches)",
+          "tr": "20°C - 29°C (Rüzgarlı, sıcak plaj havası)"
+        },
+        "winter": {
+          "en": "10°C - 18°C (Green vineyards, wine firesides)",
+          "tr": "10°C - 18°C (Yemyeşil üzüm bağları ve şömineler)"
+        },
+        "springFall": {
+          "en": "15°C - 24°C (Whale watching season)",
+          "tr": "15°C - 24°C (Balina gözlem mevsimi)"
+        }
+      },
+      "vibes": [
+        "Adventure",
+        "Zen & Nature",
+        "Foodie Heaven",
+        "Romantic"
+      ],
+      "soundscape": "ocean_coastline",
+      "culturalTip": {
+        "en": "A friendly Howzit is standard greeting; check beach flags before swimming.",
+        "tr": "Yaygın selamlaşma Howzit kelimesidir; yüzmeden önce plajdaki cankurtaran bayraklarını kontrol edin."
+      },
+      "coordinates": {
+        "lat": -33.9249,
+        "lng": 18.4241
+      },
+      "localEats": [
+        {
+          "name": "Cape Malay Bobotie",
+          "desc": {
+            "en": "Curried minced meat baked with egg custard, yellow rice and chutney.",
+            "tr": "Baharatlı kıyma üzerine yumurtalı krema fırınlanarak yapılan Güney Afrika klasiği."
+          }
+        }
+      ],
+      "attractions": [
+        {
+          "id": "cpt-1",
+          "name": {
+            "en": "Table Mountain Cableway",
+            "tr": "Masa Dağı ve Döner Teleferik"
+          },
+          "category": "Adventure",
+          "rating": 4.9,
+          "reviewsCount": 5100,
+          "costEstimate": {
+            "en": "R420 ( USD)",
+            "tr": "420 R (Yaklaşık 23 USD)"
+          },
+          "duration": {
+            "en": "3 hours",
+            "tr": "3 saat"
+          },
+          "bestHour": {
+            "en": "Late afternoon to catch sunset across Camps Bay",
+            "tr": "Camps Bay üzerinden gün batımını izlemek için ikindi vakti"
+          },
+          "photoSpotTips": {
+            "en": "Summit ledge looking at Twelve Apostles with tablecloth clouds cascading.",
+            "tr": "Zirve kenarından On İki Havariler zirvelerine ve Masa Örtüsü bulutlarına bakan açı."
+          },
+          "insiderSecret": {
+            "en": "The rotating cable car floor spins 360 degrees on ascent for panoramic views.",
+            "tr": "Teleferiğin tabanı çıkışta 360 derece döner, böylece herkes kesintisiz manzara izler."
+          },
+          "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+          "description": {
+            "en": "A flat-topped landmark older than the Himalayas with over 2,200 endemic flora species.",
+            "tr": "Himalayalar'dan daha yaşlı, 2.200'den fazla endemik çiçek türüne ev sahipliği yapan doğa harikası."
+          }
+        }
+      ],
+      "miniItinerary": [
+        {
+          "day": 1,
+          "title": {
+            "en": "Ocean Horizons & Summit Sunsets",
+            "tr": "Okyanus Ufukları ve Zirve Gün Batımı"
+          },
+          "morning": {
+            "en": "Morning coffee in Bo-Kaap neighborhood.",
+            "tr": "Rengarenk Bo-Kaap sokaklarında sabah kahvesi."
+          },
+          "afternoon": {
+            "en": "Scenic coastal drive along Chapman's Peak to Boulders penguins.",
+            "tr": "Chapman's Peak sahil yolundan Simon's Town penguenlerine doğru sürüş."
+          },
+          "evening": {
+            "en": "Cableway up Table Mountain for sundowners watching Atlantic turn gold.",
+            "tr": "Masa Dağı'na teleferikle çıkış ve Atlantik'in altın rengine bürünüşünü izleme."
+          }
+        }
+      ]
+    },
+    {
+      "id": "bangkok-th",
+      "name": {
+        "en": "Bangkok",
+        "tr": "Bangkok"
+      },
+      "country": {
+        "en": "Thailand",
+        "tr": "Tayland"
+      },
+      "region": "Asia",
+      "flag": "🇹🇭",
+      "tagline": {
+        "en": "A sensory whirlpool of shimmering gilded spires, floating canals, and legendary street food",
+        "tr": "Altın kulelerin, yüzen kanalların ve efsanevi sokak lezzetlerinin duyusal girdabı"
+      },
+      "heroImage": "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1600&q=80",
+      "thumbnail": "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=600&q=80",
+      "currency": {
+        "code": "THB",
+        "symbol": "฿",
+        "rateToUSD": 0.028
+      },
+      "language": {
+        "en": "Thai",
+        "tr": "Tayca"
+      },
+      "timeZone": "GMT+7",
+      "costLevel": "$",
+      "costIndex": 1,
+      "bestTimeToVisit": {
+        "en": "November - February",
+        "tr": "Kasım - Şubat"
+      },
+      "weather": {
+        "summer": {
+          "en": "28°C - 35°C (Warm tropical days with monsoons)",
+          "tr": "28°C - 35°C (Tropikal sıcaklık ve muson yağmurları)"
+        },
+        "winter": {
+          "en": "22°C - 31°C (Gentle breezes, peak comfort)",
+          "tr": "22°C - 31°C (Ilık meltemler, en konforlu seyahat dönemi)"
+        },
+        "springFall": {
+          "en": "27°C - 34°C (Hot season)",
+          "tr": "27°C - 34°C (Sıcak tropik günler)"
+        }
+      },
+      "vibes": [
+        "Foodie Heaven",
+        "Historic",
+        "Nightlife",
+        "Adventure"
+      ],
+      "soundscape": "tropical_stream",
+      "culturalTip": {
+        "en": "Dress respectfully in temples: shoulders and knees covered, shoes removed.",
+        "tr": "Tapınaklara girerken omuz ve dizler örtülü olmalı, ayakkabılar çıkarılmalıdır."
+      },
+      "coordinates": {
+        "lat": 13.7563,
+        "lng": 100.5018
+      },
+      "localEats": [
+        {
+          "name": "Tom Yum Goong",
+          "desc": {
+            "en": "Hot & sour broth with lemongrass, kaffir lime, and river prawns.",
+            "tr": "Limon otu, misket limonu yaprağı ve tatlı su karidesli acı-ekşi şölen çorbası."
+          }
+        }
+      ],
+      "attractions": [
+        {
+          "id": "bgk-1",
+          "name": {
+            "en": "Wat Arun (Temple of Dawn)",
+            "tr": "Wat Arun (Şafak Tapınağı)"
+          },
+          "category": "Historic",
+          "rating": 4.8,
+          "reviewsCount": 5120,
+          "costEstimate": {
+            "en": "100 THB (.80 USD)",
+            "tr": "100 THB (Yaklaşık 2.80 USD)"
+          },
+          "duration": {
+            "en": "1.5 hours",
+            "tr": "1,5 saat"
+          },
+          "bestHour": {
+            "en": "Sunset from across Chao Phraya river",
+            "tr": "Chao Phraya Nehri karşısından gün batımı"
+          },
+          "photoSpotTips": {
+            "en": "Porcelain mosaic prang catching evening golden rays.",
+            "tr": "Porselen mozaik kulelerin batan güneş ışığını yakaladığı an."
+          },
+          "insiderSecret": {
+            "en": "Mosaic tiles were made from recycled Chinese porcelain ballast from merchant ships.",
+            "tr": "Mozaikler ticaret gemilerinin safrada kullandığı kırık Çin porselenlerinden yapılmıştır."
+          },
+          "image": "https://images.unsplash.com/photo-1563492065599-3580f775dce4?auto=format&fit=crop&w=800&q=80",
+          "description": {
+            "en": "Architectural jewel on Chao Phraya river decorated with colorful porcelain.",
+            "tr": "Chao Phraya Nehri kıyısında binlerce renkli porselen parçasıyla süslenmiş mimari şaheser."
+          }
+        }
+      ],
+      "miniItinerary": [
+        {
+          "day": 1,
+          "title": {
+            "en": "Gilded Spires & Flaming Woks",
+            "tr": "Altın Kuleler ve Alev Alev Woklar"
+          },
+          "morning": {
+            "en": "Grand Palace and Wat Pho reclining Buddha statue.",
+            "tr": "Büyük Saray ve Wat Pho'nun devasa yatan Buda heykeli ziyareti."
+          },
+          "afternoon": {
+            "en": "Cross river to climb Wat Arun staircases with Thai milk tea.",
+            "tr": "Nehri geçerek Wat Arun merdivenlerini tırmanma ve buzlu Tay sütlü çayı."
+          },
+          "evening": {
+            "en": "Yaowarat Chinatown street food feast and coconut ice cream.",
+            "tr": "Çin Mahallesi'nde sokak lezzetleri ve hindistancevizi dondurması."
+          }
+        }
+      ]
+    },
+    {
+      "id": "sydney-au",
+      "name": {
+        "en": "Sydney",
+        "tr": "Sidney"
+      },
+      "country": {
+        "en": "Australia",
+        "tr": "Avustralya"
+      },
+      "region": "Oceania",
+      "flag": "🇦🇺",
+      "tagline": {
+        "en": "Golden Pacific beaches wrapping around the world's most glamorous natural harbor",
+        "tr": "Dünyanın en göz alıcı doğal limanını çevreleyen altın rengi Pasifik plajları"
+      },
+      "heroImage": "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1600&q=80",
+      "thumbnail": "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=600&q=80",
+      "currency": {
+        "code": "AUD",
+        "symbol": "$",
+        "rateToUSD": 0.65
+      },
+      "language": {
+        "en": "English",
+        "tr": "İngilizce"
+      },
+      "timeZone": "GMT+10",
+      "costLevel": "9376$",
+      "costIndex": 3,
+      "bestTimeToVisit": {
+        "en": "September - November & March - May",
+        "tr": "Eylül - Kasım & Mart - Mayıs"
+      },
+      "weather": {
+        "summer": {
+          "en": "20°C - 28°C (Sun, surf, harbor barbecues)",
+          "tr": "20°C - 28°C (Güneş, sörf, liman barbeküleri)"
+        },
+        "winter": {
+          "en": "9°C - 17°C (Crisp sunny blue skies, whale migration)",
+          "tr": "9°C - 17°C (Masmavi açık gökyüzü, balina göçü)"
+        },
+        "springFall": {
+          "en": "15°C - 23°C (Gentle ocean breezes)",
+          "tr": "15°C - 23°C (Ilık okyanus meltemleri)"
+        }
+      },
+      "vibes": [
+        "Adventure",
+        "Zen & Nature",
+        "Art & Design",
+        "Romantic"
+      ],
+      "soundscape": "ocean_coastline",
+      "culturalTip": {
+        "en": "Swim strictly between the red and yellow flags where surf lifesavers patrol.",
+        "tr": "Plajlarda mutlaka cankurtaranların devriye gezdiği kırmızı-sarı bayraklar arasında yüzün."
+      },
+      "coordinates": {
+        "lat": -33.8688,
+        "lng": 151.2093
+      },
+      "localEats": [
+        {
+          "name": "Sydney Rock Oysters",
+          "desc": {
+            "en": "Freshly shucked creamy native oysters on ice with lemon.",
+            "tr": "Buz üzerinde limon eşliğinde servis edilen taze açılmış kremamsı yerel istiridyeler."
+          }
+        }
+      ],
+      "attractions": [
+        {
+          "id": "syd-1",
+          "name": {
+            "en": "Sydney Opera House & Botanic Garden",
+            "tr": "Sidney Opera Binası ve Botanik Bahçe"
+          },
+          "category": "Architecture",
+          "rating": 4.9,
+          "reviewsCount": 6800,
+          "costEstimate": {
+            "en": "Free outside, AUD  tour",
+            "tr": "Dışarısı ücretsiz, AUD  tur"
+          },
+          "duration": {
+            "en": "2.5 hours",
+            "tr": "2,5 saat"
+          },
+          "bestHour": {
+            "en": "Golden hour from Mrs Macquarie's Chair",
+            "tr": "Mrs Macquarie's Chair noktasından altın gün batımı"
+          },
+          "photoSpotTips": {
+            "en": "Frames both Opera House sails and Harbour Bridge together.",
+            "tr": "Hem Opera yelkenlerini hem de Liman Köprüsünü tek kadrajda birleştirir."
+          },
+          "insiderSecret": {
+            "en": "Over 1,056,006 Swedish self-cleaning ceramic tiles cover the roof sails.",
+            "tr": "Çatı yelkenlerini kendi kendini temizleyen 1 milyondan fazla İsveç seramik karosu kaplar."
+          },
+          "image": "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=800&q=80",
+          "description": {
+            "en": "20th-century architectural masterpiece resembling billowed white sails over azure waters.",
+            "tr": "Masmavi sular üzerinde rüzgarla dolmuş beyaz yelkenleri andıran 20. yüzyıl mimari şaheseri."
+          }
+        }
+      ],
+      "miniItinerary": [
+        {
+          "day": 1,
+          "title": {
+            "en": "Harbour Sails & Pacific Clifftops",
+            "tr": "Liman Yelkenleri ve Pasifik Falezleri"
+          },
+          "morning": {
+            "en": "Bondi to Bronte coastal cliff walk with morning ocean swell.",
+            "tr": "Sabah dalgaları eşliğinde Bondi'den Bronte'ye uzanan falez yürüyüşü."
+          },
+          "afternoon": {
+            "en": "Circular Quay ferry across harbor past Opera House to Manly beach.",
+            "tr": "Opera Binası'nın önünden Manly plajına doğru ikonik liman vapuru yolculuğu."
+          },
+          "evening": {
+            "en": "Sunset drinks at Opera Bar with live acoustic music.",
+            "tr": "Opera Bar'da canlı akustik müzik eşliğinde gün batımı."
+          }
+        }
+      ]
+    },
+    {
+      "id": "tromso-no",
+      "name": {
+        "en": "Tromso",
+        "tr": "Tromsø"
+      },
+      "country": {
+        "en": "Norway",
+        "tr": "Norveç"
+      },
+      "region": "Europe",
+      "flag": "🇳🇴",
+      "tagline": {
+        "en": "The Arctic Gateway of crystalline fjords, reindeer sleds, and dancing aurora skies",
+        "tr": "Kristal fiyortların, ren geyiği kızaklarının ve dans eden kuzey ışıklarının Arktik Kapısı"
+      },
+      "heroImage": "https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?auto=format&fit=crop&w=1600&q=80",
+      "thumbnail": "https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?auto=format&fit=crop&w=600&q=80",
+      "currency": {
+        "code": "NOK",
+        "symbol": "kr",
+        "rateToUSD": 0.092
+      },
+      "language": {
+        "en": "Norwegian & Sami",
+        "tr": "Norveççe & Laponca"
+      },
+      "timeZone": "GMT+1",
+      "costLevel": "9376$",
+      "costIndex": 3,
+      "bestTimeToVisit": {
+        "en": "September - March (Aurora) & June - July (Midnight Sun)",
+        "tr": "Eylül - Mart (Kutup Işıkları) & Haziran - Temmuz (Gece Yarısı Güneşi)"
+      },
+      "weather": {
+        "summer": {
+          "en": "10°C - 17°C (Midnight sun 24h, hiking trails)",
+          "tr": "10°C - 17°C (24 saat gün ışığı, doğa yürüyüşleri)"
+        },
+        "winter": {
+          "en": "-4°C - 1°C (Mild for 69° North due to Gulf Stream)",
+          "tr": "-4°C - 1°C (Gulf Stream sayesinde 69° Kuzey için şaşırtıcı ılımanlık)"
+        },
+        "springFall": {
+          "en": "3°C - 9°C (Autumn tundra foliage)",
+          "tr": "3°C - 9°C (Renkli tundra sonbaharı)"
+        }
+      },
+      "vibes": [
+        "Adventure",
+        "Zen & Nature",
+        "Romantic"
+      ],
+      "soundscape": "arctic_wind",
+      "culturalTip": {
+        "en": "Embrace Friluftsliv (open-air living); dress in pure wool base layers with windproof shell.",
+        "tr": "Norveçlilerin açık hava yaşam felsefesi Friluftsliv'i benimseyin; saf yün içlikler tercih edin."
+      },
+      "coordinates": {
+        "lat": 69.6492,
+        "lng": 18.9553
+      },
+      "localEats": [
+        {
+          "name": "Arctic Char with Dill",
+          "desc": {
+            "en": "Cold-water salmonid pan-roasted with fingerling potatoes.",
+            "tr": "Soğuk sularda yetişen taze alabalığın dereotu ve patatesle tavada pişirilmiş lezzeti."
+          }
+        }
+      ],
+      "attractions": [
+        {
+          "id": "tro-1",
+          "name": {
+            "en": "Fjellheisen Cable Car Viewpoint",
+            "tr": "Fjellheisen Teleferiği & Seyir Terası"
+          },
+          "category": "Zen & Nature",
+          "rating": 4.9,
+          "reviewsCount": 2600,
+          "costEstimate": {
+            "en": "395 NOK ( USD)",
+            "tr": "395 NOK (Yaklaşık 36 USD)"
+          },
+          "duration": {
+            "en": "2.5 hours",
+            "tr": "2,5 saat"
+          },
+          "bestHour": {
+            "en": "10:00 PM in winter for dancing auroras",
+            "tr": "Kış aylarında gökyüzünde dans eden ışıklar için 22:00"
+          },
+          "photoSpotTips": {
+            "en": "Wooden deck 421m above sea level looking down at Tromso island bridge.",
+            "tr": "Denizden 421m yükseklikteki ahşap terastan ada köprüsünü ve fiyordu kadrajlayın."
+          },
+          "insiderSecret": {
+            "en": "Rent snowshoes from mountain station in winter to hike into quiet plateau away from deck lights.",
+            "tr": "Işıklardan uzaklaşıp derin sessizlikte aurora izlemek için zirve istasyonundan kar ayakkabısı kiralayın."
+          },
+          "image": "https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?auto=format&fit=crop&w=800&q=80",
+          "description": {
+            "en": "Cableway ascending 421m providing sweeping vistas of snowy fjords and auroras.",
+            "tr": "421 metreye tırmanarak karlı fiyortların ve kutup ışıklarının eşsiz manzarasını sunan teleferik."
+          }
+        }
+      ],
+      "miniItinerary": [
+        {
+          "day": 1,
+          "title": {
+            "en": "Glacial Vistas & Aurora Hunting",
+            "tr": "Buzul Manzaraları ve Kutup Işığı Avı"
+          },
+          "morning": {
+            "en": "Polar Museum expedition history and coffee in 19th-century wooden warehouse.",
+            "tr": "Kutup Müzesi keşif tarihi ve 19. yüzyıl ahşap deposunda kahve keyfi."
+          },
+          "afternoon": {
+            "en": "Fjellheisen cable car up Storsteinen mountain for snowshoeing.",
+            "tr": "Fjellheisen teleferiğiyle dağa çıkış ve karda yürüyüş."
+          },
+          "evening": {
+            "en": "Warm stew in Sami lavvu tent followed by chasing auroras across dark fjords.",
+            "tr": "Geleneksel lavvu çadırında sıcacık güveç ve fiyortlarda kutup ışığı avı."
+          }
+        }
+      ]
+    }
+  ]
+}
